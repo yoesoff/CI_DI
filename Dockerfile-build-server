@@ -1,0 +1,12 @@
+# Dockerfile-build-server
+# Image dasar yang mendukung apt-get
+FROM openjdk:17-jdk-slim
+
+# Install Git
+RUN apt-get update && apt-get install -y git
+
+# Install Maven
+RUN apt-get install -y maven
+
+# Verify installations
+RUN git --version && mvn --version
