@@ -6,7 +6,7 @@ networks:
 services:
   gitlab:
     image: gitlab/gitlab-ce:latest
-    container_name: gitlab
+    container_name: "gitlab.local"
     restart: always
     hostname: gitlab
     networks:
@@ -33,7 +33,7 @@ services:
 
   jenkins:
     image: jenkins/jenkins:lts
-    container_name: jenkins
+    container_name: "jenkins.local"
     restart: always
     hostname: jenkins
     networks:
@@ -59,7 +59,7 @@ services:
 
   build-server:
     image: build-server:latest
-    container_name: build-server
+    container_name: "build-server.local"
     hostname: build-server
     networks:
       - cicd-network
